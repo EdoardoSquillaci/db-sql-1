@@ -1,0 +1,87 @@
+1° Query
+
+select *
+from students 
+where year (date_of_birth) = '1990';
+
+2° Query
+
+
+select *
+from courses
+where cfu = 10;
+
+3° Query
+
+select *
+from students
+where year(date_of_birth) < '1994';
+
+4° Query
+
+select *
+from courses
+where period = 'I semestre' and year = '1'; 
+
+5° Query
+
+select *
+from exams
+where hour >= '14:00:00' and date(date) = '2020/06/20' ;
+
+6° Query
+
+select *
+from degrees 
+where level = 'magistrale';
+
+
+
+7° Query
+
+select *
+from departments
+
+8° Query
+
+select *
+from  teachers 
+where phone is null;
+
+
+
+
+GROUP BY
+
+1° Query
+
+
+select year (enrolment_date) as Data_Discrizione , count(id) as Numero_Studenti
+from students
+group by year (enrolment_date);
+
+
+
+2° Query
+
+select office_address as Indirizzo_Ufficio , count(id) as Numero_Insegnanti 
+from teachers 
+group by office_address ;
+
+
+
+3° Query
+
+select exam_id as Numero_Esame, avg(vote) as Media_Voti
+from exam_student 
+group by exam_id ;
+
+
+4° Query
+
+SELECT count(department_id) AS Numero_Dipartimento, MIN(name) AS Corso_Laurea
+FROM degrees
+GROUP BY department_id;
+
+
+
